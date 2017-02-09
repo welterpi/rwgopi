@@ -19,4 +19,24 @@ for x in range(0, 50):                   #Loop x times
   
   print('Ping 8x40kHz pulses (trigger)')
   GPIO.output(trig, True)                #Turn on ping trigger
- 
+  time.sleep(0.00001)                    #Pulse ping for 10uSec
+  GPIO.output(trig, False)               #Turn off ping trigger
+  
+  while GPIO.input(echo)==0:             #Echo low, start listen time
+    pulse_begin = time.time()            #Save time of last low pulse
+  while GPIO.input(echo)==1:             #Wait/test for Echo high. End listen time
+     pulse_end = time.time()             #Save time of last high pulse
+  print('Reading Finished')
+  pulse_width = pulse_end - pulse_begin  #Calculate time for round trip of pulse to object and back
+  
+  #Sea level speed of sound=34300 cm/sec. 
+  #Divide pulse_width by 2 to get time of one-way (1/2 round) trip.
+  dist = pulse_width * 34300 / 2      #Pulse width (sec)/2*Speed of sound (cm/sec) is cm distance
+  dist = round(dist - offset, 1)         #Calibrate result and round to 1/10th of cm
+  if dist > 2 and dist < 400:            #Sensor range is 2cm to 400cm
+    print('Distance = ',dist,' cm')      #Print calibrated distance measurement
+  else:
+    print('Out of 2cm to 4meter Range!') #If out of range print error message
+ #End of indented for x in range loop
+GPIO.cleanup()                           #Reset GPIO ports
+print('Done')                            #Print "Done" to show program ended normally
