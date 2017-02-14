@@ -7,8 +7,8 @@
 import RPi.GPIO as GPIO                  #Import GPOI Library
 import time                              #Import time Library
 GPIO.setmode(GPIO.BOARD)                 #Use GPIO pin location numbering
-trig = 11                                #Set trigger pin
-echo = 13                                #Set echo pin
+trig = 13                                #Set trigger pin
+echo = 26                                #Set echo pin
 samp = 50                                #Number of samples per reading
 offset = round (0.6, 2)                  #Offset to calibrate distance to your zero location
 discard = int(samp * 0.2)                #Discard % of high and low readings
