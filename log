@@ -1,0 +1,20 @@
+pi@dex ~/Desktop/rwgopi $ sudo python usdistance.py
+usdistance.py:13: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(echo,GPIO.IN)                 #Set echo as input
+Setting Up
+Ping 8x40kHz pulses (trigger)
+
+^CTraceback (most recent call last):
+  File "usdistance.py", line 26, in <module>
+    pulse_begin = time.time()            #Save time of last low pulse
+KeyboardInterrupt
+pi@dex ~/Desktop/rwgopi $ sudo python usdistanceha.py
+usdistanceha.py:15: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(trig,GPIO.OUT)                #Set trigger as output
+^CTraceback (most recent call last):
+  File "usdistanceha.py", line 33, in <module>
+    pulse_begin = time.time()            #Save time of last low pulse
+KeyboardInterrupt
+pi@dex ~/Desktop/rwgopi $ ^C
+pi@dex ~/Desktop/rwgopi $ 
+
