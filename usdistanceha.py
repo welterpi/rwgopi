@@ -6,7 +6,8 @@
 #Echo -> 4.7k Ohm resistor -> RPi pin 13 + 10k Ohm -> RPi & SR0-
 import RPi.GPIO as GPIO                  #Import GPOI Library
 import time                              #Import time Library
-GPIO.setmode(GPIO.BOARD)                 #Use GPIO pin location numbering
+GPIO.cleanup()
+GPIO.setmode(GPIO.BCM)                   #Use GPIO BCM I/O numbering
 trig = 13                                #Set trigger pin
 echo = 26                                #Set echo pin
 samp = 50                                #Number of samples per reading
