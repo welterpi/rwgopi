@@ -6,7 +6,7 @@
 import RPi.GPIO as GPIO                  #Import GPOI Library
 import time                              #Import time Library
 GPIO.cleanup()
-GPIO.setmode(GPIO.BOARD)                 #Use GPIO pin location numbering
+GPIO.setmode(GPIO.BCM)                   #Use GPIO BCM I/O numbering
 trig = 13                                #Set trigger pin
 echo = 26                                #Set echo pin
 offset = round (0.6, 2)                  #Offset to calibrate distance to your zero location
