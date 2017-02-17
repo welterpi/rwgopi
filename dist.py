@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 import time
-
+GPIO.cleanup()
 GPIO.setmode(GPIO.BCM)
 
 TRIG = 13
