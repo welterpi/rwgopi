@@ -14,7 +14,7 @@ def usdistance(trig,echo,samp):
   avgdist = 0; sumdist = 0                 #Reset (zero) variables
   timelist = []                            #Store times in a list variable
   
-    for x in range(0, samp):                 #Loop for each sample x times
+  for x in range(0, samp):                 #Loop for each sample x times
     #  print('Setting Up')                    #Show program has started at top of loop
     GPIO.output(trig, False)               #Turn off ping trigger
     time.sleep(0.010)                       #Delay so sensor settles before ping
