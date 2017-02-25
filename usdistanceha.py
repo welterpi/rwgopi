@@ -41,7 +41,7 @@ def usdistance(trig,echo,samp):
     #Sea level speed of sound=34300 cm/sec  . 
     #Divide pulse_width by 2 to get time of   one-way (1/2 round) trip.
   sumdist = summedtimes * 34300 / 2      #  Pulse width (sec)/2*Speed of sound (cm/sec) is cm distance
-  avgdist = round((sumdist / (samp - disca  rd * 2)) - offset, 1)         #Calibrate result and round to 1/10th of cm
+  avgdist = round((sumdist / (samp - discard * 2)) - offset, 1)         #Calibrate result and round to 1/10th of cm
   if avgdist > 2 and avgdist < 400:                #Sensor range is 2cm to 400cm
     print('Distance = ',avgdist,' cm')      #Print calibrated distance measurement
   else:
