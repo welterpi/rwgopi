@@ -46,7 +46,7 @@ def usdistance(trig,echo,samp):
     print('Distance = ',avgdist,' cm')      #Print calibrated distance measurement
   else:
       print(avgdist,' Out of 2cm to 4meter Range!') #If out of range print error mess  age
-return avgdist
+  return avgdist
 
 
 import RPi.GPIO as GPIO                  #Import GPOI Library
