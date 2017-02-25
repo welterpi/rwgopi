@@ -58,8 +58,8 @@ echo = 26                                #Set echo pin
 samp = 50                                #Number of samples per reading
 offset = round (0.6, 2)                  #Offset to calibrate distance to your zero location
 
-usdistance(trig,echo,samp)
-print('Distance = ',avgdist,' cm')      #Print calibrated distance measurement
+#usdistance(trig,echo,samp)
+print('Distance = ',usdistance(trig,echo,samp),' cm')      #Print calibrated distance measurement
 
 GPIO.cleanup()                           #Reset GPIO ports   
 print('Done')                            #Print "Done" to show program ended norma  ll       
